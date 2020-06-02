@@ -122,12 +122,18 @@ OpenShift Pipelines is provided as an add-on on top of OpenShift that can be ins
 
 ![OpenShift OperatorHub](images/operatorhub.png)
 
+### Clone the CatApp repository
+
+```bash
+git clone https://github.com/IBMDevConnect/catapp.git
+```
+
 ### Run the CatApp build-and-deploy pipeline
 
 1) Create a project for the sample application that you will be using in this tutorial:
 
 ```bash
-$ oc new-project catapp
+oc new-project catapp
 ```
 
 2) OpenShift Pipelines automatically adds and configures a `ServiceAccount` named `pipeline` that has sufficient permissions to build and push an image. This
