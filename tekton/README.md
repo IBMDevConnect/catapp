@@ -196,3 +196,8 @@ tkn pipelinerun logs --last -f
 
 Verify that CatApp has now built and deployed to your OpenShift environment. CatApp is deployed with an OpenShift Route which exposes the app outside of your cluster. You can get the Route URL using:
 Get the URL for your route with `oc get route catapp`, and open the route URL in your web browser.
+
+10. Looking back at the project, you should see that the images are successfully built and deployed.
+
+![UI deploy](/images/deploy.png)
+
