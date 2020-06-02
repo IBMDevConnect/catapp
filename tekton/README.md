@@ -160,6 +160,7 @@ The TriggerBinding specifies the values to use for your TriggerTemplate’s para
 
 The rest of the parameters in the TriggerBinding have hardcoded values, because they do not come from the pull request event; these values are specific to your OpenShift environment.
 
+So , edit the  values of URL value and REVISION value to your "cloned git URL" and the branch as "master"
 ```
 apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerBinding
