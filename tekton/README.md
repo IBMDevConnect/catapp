@@ -98,10 +98,6 @@ A TriggerBinding describes what information you want to extract from an event to
 
 An EventListener creates a Deployment and Service that listen for events. When the EventListener receives an event, it executes a specified TriggerBinding and TriggerTemplate. In this tutorial, the EventListener will receive pull request events from GitHub and execute the TriggerBinding and TriggerTemplate to create a build-and-deploy PipelineRun.
 
-The following diagram illustrates the control flow of the three Tekton Triggers resources when an event is received:
-
-![Event Listener Architecture](images/event.png)
-
 In the following sections, you will go through each of the above steps to define and invoke a pipeline.
 
 Now that you have a better understanding of Tekton Triggers, let’s dive into the tutorial!
@@ -153,7 +149,7 @@ oc apply -f tekton/build-and-deploy-openshift-pipeline.yaml
 tkn pipeline ls
 ```
 
-**5) Modify the Trigger binding values.**
+**5. Modify the Trigger binding values.**
 The TriggerBinding specifies the values to use for your TriggerTemplate’s parameters. The URL and REVISION parameters are especially important because they are extracted from the pull request event body. Looking at the GitHub pull request event documentation, you can find the JSON path for values of the URL and REVISION in the event body. For Tekton Triggers to substitute these JSON paths into values, they must be surrounded by $() and they must start with body (because the values are coming from the event body).
 
 The rest of the parameters in the TriggerBinding have hardcoded values, because they do not come from the pull request event; these values are specific to your OpenShift environment.
@@ -196,7 +192,7 @@ tkn pipelinerun list
 tkn pipelinerun logs --last -f
 ```
 
-### 10)View the deployed Nodejs app
+### 9. View the deployed Nodejs app
 
 Verify that CatApp has now built and deployed to your OpenShift environment. CatApp is deployed with an OpenShift Route which exposes the app outside of your cluster. You can get the Route URL using:
 Get the URL for your route with `oc get route catapp`, and open the route URL in your web browser.
